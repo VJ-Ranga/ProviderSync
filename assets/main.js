@@ -4,7 +4,8 @@
    ============================================================ */
 
 const page = document.body.dataset.page || "home";
-const auditMail = `mailto:${SITE.email}?subject=${encodeURIComponent("Free Backend Audit request")}&body=${encodeURIComponent("Hi ProviderSync,\n\nI'd like to book a free backend audit.\n\nOrganisation:\nSector:\nBiggest admin headache right now:\n")}`;
+const enquiryMail = `mailto:${SITE.email}?subject=${encodeURIComponent("Enquiry — backend support for our organisation")}&body=${encodeURIComponent("Hi ProviderSync,\n\nWe'd like to talk about backend support.\n\nOrganisation:\nSector (NDIS / Aged Care / ECE):\nBiggest admin or IT headache right now:\n\nBest email to reach us:\n")}`;
+const leadMail = (subject) => `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Hi ProviderSync,\n\nPlease send it to this email address:\n\nOrganisation (optional):\nSector (optional):\n")}`;
 
 /* ---------- Header ---------- */
 document.getElementById("siteHeader").innerHTML = `
@@ -19,7 +20,7 @@ document.getElementById("siteHeader").innerHTML = `
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           ${NAV.map(n => `<li class="nav-item"><a class="nav-link${n.page === page ? " active" : ""}" ${n.page === page ? 'aria-current="page"' : ""} href="${n.href}">${n.label}</a></li>`).join("")}
-          <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn btn-ps btn-sm px-4 py-2" href="contact.html"><i class="fa-solid fa-clipboard-check"></i>Free Audit</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn btn-ps btn-sm px-4 py-2" href="contact.html"><i class="fa-solid fa-envelope-open-text"></i>Enquire</a></li>
         </ul>
       </div>
     </div>
@@ -60,7 +61,9 @@ document.getElementById("siteFooter").innerHTML = `
             <li><i class="fa-regular fa-clock me-2 text-amber"></i>${SITE.hours}</li>
             <li><i class="fa-solid fa-reply me-2 text-amber"></i>${SITE.response}</li>
           </ul>
-          <a class="btn btn-ps btn-sm px-4 py-2 mt-2" href="${auditMail}"><i class="fa-solid fa-envelope"></i>Email us now</a>
+          <h6 class="mt-3">${LEAD.notes.title}</h6>
+          <p class="small mb-2" style="color:#9FB3A8">${LEAD.notes.desc}</p>
+          <a class="btn btn-ps btn-sm px-4 py-2" href="${leadMail(LEAD.notes.subject)}"><i class="fa-solid fa-envelope"></i>${LEAD.notes.cta}</a>
         </div>
       </div>
       <hr class="mt-4" />
@@ -70,7 +73,7 @@ document.getElementById("siteFooter").innerHTML = `
       </div>
     </div>
   </footer>
-  <a href="${auditMail}" class="mail-float" aria-label="Email ProviderSync"><span class="pulse"></span><i class="fa-solid fa-envelope"></i></a>
+  <a href="${enquiryMail}" class="mail-float" aria-label="Email ProviderSync"><span class="pulse"></span><i class="fa-solid fa-envelope"></i></a>
   <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>`;
 
 /* ---------- Navbar scroll + back-to-top ---------- */
@@ -178,6 +181,37 @@ if ($("whyGrid")) {
   observeReveals($("whyGrid"));
 }
 
+/* Compliance & sensitivity grid */
+if ($("complianceGrid")) {
+  $("complianceGrid").innerHTML = COMPLIANCE.map((c, i) => `
+    <div class="col-md-6 col-lg-4 reveal reveal-d${i % 3}">
+      <div class="card-ps">
+        <div class="icon-box ${i % 2 ? "icon-amber" : "icon-green"}"><i class="fa-solid ${c.icon}"></i></div>
+        <h5 class="h6 fw-semibold">${c.title}</h5>
+        <p class="text-muted-ps small mb-0">${c.desc}</p>
+      </div>
+    </div>`).join("");
+  observeReveals();
+}
+
+/* Lead magnet card (credential cheat-sheet) */
+if ($("leadMagnet")) {
+  $("leadMagnet").innerHTML = `
+    <div class="lead-card reveal">
+      <div class="row g-4 align-items-center">
+        <div class="col-auto d-none d-sm-block"><div class="lead-badge"><i class="fa-solid fa-file-circle-check"></i></div></div>
+        <div class="col">
+          <h3 class="h4 mb-1 text-white">${LEAD.checklist.title}</h3>
+          <p class="small mb-0" style="color:#DCEBE2">${LEAD.checklist.desc}</p>
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a class="btn btn-ps" href="${leadMail(LEAD.checklist.subject)}"><i class="fa-solid fa-envelope"></i>${LEAD.checklist.cta}</a>
+        </div>
+      </div>
+    </div>`;
+  observeReveals();
+}
+
 /* Testimonials */
 if ($("quoteGrid")) {
   $("quoteGrid").innerHTML = TESTIMONIALS.map((t, i) => `
@@ -260,7 +294,7 @@ if ($("sectorTabs")) {
               <div class="arrow"><i class="fa-solid fa-arrows-rotate"></i></div>
               <div class="fix"><i class="fa-solid fa-circle-check"></i>${x.s}</div>
             </div>`).join("")}
-          <a href="contact.html" class="btn btn-green mt-3"><i class="fa-solid fa-clipboard-check"></i>Book a free ${s.title.replace(" Providers", "")} audit</a>
+          <a href="contact.html" class="btn btn-green mt-3"><i class="fa-solid fa-envelope-open-text"></i>Request a ${s.title.replace(" Providers", "")} proposal</a>
         </div>
       </div>
     </div>`).join("");
@@ -360,7 +394,7 @@ if ($("contactForm")) {
     if (!form.checkValidity()) { form.classList.add("was-validated"); return; }
     const d = Object.fromEntries(new FormData(form).entries());
     const body = `Hi ProviderSync,%0D%0A%0D%0AName: ${encodeURIComponent(d.name)}%0D%0AOrganisation: ${encodeURIComponent(d.org)}%0D%0ASector: ${encodeURIComponent(d.sector)}%0D%0AReply to: ${encodeURIComponent(d.email)}%0D%0A%0D%0A${encodeURIComponent(d.message)}`;
-    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("Free Backend Audit — " + d.org)}&body=${body}`;
+    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("Proposal request — " + d.org)}&body=${body}`;
     $("formSent").classList.remove("d-none");
     form.reset();
     form.classList.remove("was-validated");
@@ -396,7 +430,6 @@ if ($("quizBox")) {
   function renderResult() {
     const v = QUIZ_VERDICTS.find(x => yes <= x.max);
     const pct = Math.round((yes / QUIZ.length) * 100);
-    const scoreMail = `mailto:${SITE.email}?subject=${encodeURIComponent(`Free Backend Audit — Sync Score ${yes}/${QUIZ.length}`)}&body=${encodeURIComponent(`Hi ProviderSync,\n\nI just took the Sync Score check and scored ${yes}/${QUIZ.length} (${v.label}). I'd like to book a free backend audit.\n\nOrganisation:\nSector:\n`)}`;
     box.innerHTML = `
       <div class="text-center">
         <div class="score-dial" style="--pct:${pct}">
@@ -404,11 +437,21 @@ if ($("quizBox")) {
         </div>
         <h3 class="mt-4 verdict-${v.tone}">${v.label}</h3>
         <p class="text-muted-ps mx-auto" style="max-width:520px">${v.msg}</p>
-        <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
-          <a class="btn btn-ps" href="${scoreMail}"><i class="fa-solid fa-envelope"></i>Email us my score — get my free audit</a>
-          <button class="btn btn-ghost-green" type="button" id="quizRetry"><i class="fa-solid fa-arrows-rotate"></i>Retake</button>
+        <div class="mx-auto mt-4 text-start" style="max-width:460px">
+          <label class="fw-semibold small mb-2" for="quizEmail">Where should we send your full Sync Report?</label>
+          <div class="d-flex flex-wrap gap-2 form-ps">
+            <input class="form-control flex-grow-1" style="min-width:220px" id="quizEmail" type="email" placeholder="you@yourorganisation.com.au" />
+            <button class="btn btn-ps" type="button" id="quizSend"><i class="fa-solid fa-paper-plane"></i>Send my report</button>
+          </div>
+          <p class="small text-muted-ps mt-2 mb-0"><i class="fa-solid fa-lock me-1"></i>Used once, to send your report. Handled under the Australian Privacy Principles — never shared, never spammed.</p>
         </div>
+        <button class="btn btn-ghost-green mt-4" type="button" id="quizRetry"><i class="fa-solid fa-arrows-rotate"></i>Retake</button>
       </div>`;
+    $("quizSend").addEventListener("click", () => {
+      const em = $("quizEmail").value.trim();
+      if (!em || !em.includes("@")) { $("quizEmail").classList.add("is-invalid"); $("quizEmail").focus(); return; }
+      window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(`Sync Report request — score ${yes}/${QUIZ.length} (${v.label})`)}&body=${encodeURIComponent(`Hi ProviderSync,\n\nI scored ${yes}/${QUIZ.length} (${v.label}) on the Sync Score check.\nPlease send my full Sync Report to: ${em}\n\nOrganisation:\nSector (NDIS / Aged Care / ECE):\n`)}`;
+    });
     $("quizRetry").addEventListener("click", () => { idx = 0; yes = 0; renderQ(); });
   }
 

@@ -370,6 +370,24 @@ a:hover { color: var(--green-dark); }
 .photo-stack .badge-card i { color: var(--green); font-size: 1.3rem; }
 @media (max-width: 640px) { .photo-stack .badge-card { left: 10px; bottom: -16px; padding: 10px 14px; } }
 
+/* Lead magnet card */
+.lead-card {
+  background: linear-gradient(135deg, var(--green-deeper), var(--green-dark) 65%, var(--green));
+  border-radius: 22px; color: #fff; padding: clamp(26px, 4vw, 40px);
+  position: relative; overflow: hidden;
+}
+.lead-card::after {
+  content: ""; position: absolute; right: -50px; top: -50px;
+  width: 180px; height: 180px; border-radius: 50%;
+  border: 2px dashed rgba(245, 166, 35, 0.4); pointer-events: none;
+}
+.lead-card > .row { position: relative; z-index: 1; }
+.lead-badge {
+  width: 64px; height: 64px; border-radius: 18px;
+  background: rgba(245, 166, 35, 0.18); color: var(--amber);
+  display: flex; align-items: center; justify-content: center; font-size: 1.7rem;
+}
+
 /* Cost-comparison band (pricing) */
 .vs-band { border: 1px solid var(--border); border-radius: 22px; overflow: hidden; }
 .vs-band .vs-col { padding: clamp(24px, 4vw, 40px); }
