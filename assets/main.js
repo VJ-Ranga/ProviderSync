@@ -7,12 +7,12 @@ const page = document.body.dataset.page || "home";
 const enquiryMail = `mailto:${SITE.email}?subject=${encodeURIComponent("Enquiry — backend support for our organisation")}&body=${encodeURIComponent("Hi ProviderSync,\n\nWe'd like to talk about backend support.\n\nOrganisation:\nSector (NDIS / Aged Care / ECE):\nBiggest admin or IT headache right now:\n\nBest email to reach us:\n")}`;
 const leadMail = (subject) => `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Hi ProviderSync,\n\nPlease send it to this email address:\n\nOrganisation (optional):\nSector (optional):\n")}`;
 
-/* ---------- Header ---------- */
+/* ---------- Header (PNG logo — drop file at assets/img/logo.png) ---------- */
 document.getElementById("siteHeader").innerHTML = `
   <nav class="navbar navbar-expand-lg fixed-top navbar-ps" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="index.html" aria-label="ProviderSync home">
-        <i class="fa-solid fa-arrows-rotate brand-icon" aria-hidden="true"></i><span class="brand-provider">Provider</span><span class="brand-sync">Sync</span>
+        <img src="assets/img/logo.png" alt="ProviderSync" class="brand-logo-img" />
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars text-green fs-3"></i>
@@ -61,9 +61,6 @@ document.getElementById("siteFooter").innerHTML = `
             <li><i class="fa-regular fa-clock me-2 text-amber"></i>${SITE.hours}</li>
             <li><i class="fa-solid fa-reply me-2 text-amber"></i>${SITE.response}</li>
           </ul>
-          <h6 class="mt-3">${LEAD.notes.title}</h6>
-          <p class="small mb-2" style="color:#9FB3A8">${LEAD.notes.desc}</p>
-          <a class="btn btn-ps btn-sm px-4 py-2" href="${leadMail(LEAD.notes.subject)}"><i class="fa-solid fa-envelope"></i>${LEAD.notes.cta}</a>
         </div>
       </div>
       <hr class="mt-4" />
@@ -210,21 +207,6 @@ if ($("leadMagnet")) {
       </div>
     </div>`;
   observeReveals();
-}
-
-/* Testimonials */
-if ($("quoteGrid")) {
-  $("quoteGrid").innerHTML = TESTIMONIALS.map((t, i) => `
-    <div class="col-md-4 reveal reveal-d${i + 1}">
-      <div class="quote-card">
-        <p class="quote">${t.quote}</p>
-        <div class="quote-who">
-          <div class="avatar"><i class="fa-solid ${t.icon}"></i></div>
-          <div><div class="fw-semibold small">${t.name}</div><div class="text-muted-ps" style="font-size:.8rem">${t.role}</div></div>
-        </div>
-      </div>
-    </div>`).join("");
-  observeReveals($("quoteGrid"));
 }
 
 /* Full service groups (services page) */

@@ -1,0 +1,18 @@
+# Claude Code local settings (personal permissions/config — not shared)
+.claude/
+
+# Local AI session data and implementation notes
+.remember/
+docs/
+
+# Internal business reference documents
+*.docx
+*.pdf
+PROVIDERSYNC_BUSINESS_PLAN.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Local scratch / logs
+*.log

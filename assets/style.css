@@ -107,11 +107,8 @@ a:hover { color: var(--green-dark); }
   transition: padding 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .navbar-ps.scrolled { padding: 9px 0; box-shadow: 0 8px 28px rgba(15, 92, 51, 0.08); border-bottom-color: var(--border); }
-.navbar-ps .navbar-brand { font-weight: 800; font-size: 1.42rem; letter-spacing: -0.5px; font-family: var(--font-body); }
-.navbar-ps .brand-provider { color: var(--green); }
-.navbar-ps .brand-sync { color: var(--ink); }
-.navbar-ps .brand-icon { color: var(--amber); margin-right: 5px; display: inline-block; transition: transform 0.5s ease; }
-.navbar-ps .navbar-brand:hover .brand-icon { transform: rotate(180deg); }
+.navbar-ps .navbar-brand { display: flex; align-items: center; padding: 0; }
+.brand-logo-img { height: 40px; width: auto; display: block; }
 .navbar-ps .nav-link { font-weight: 500; color: var(--ink); margin: 0 4px; font-size: 0.95rem; position: relative; }
 .navbar-ps .nav-link::after {
   content: ""; position: absolute; left: 0.75rem; right: 0.75rem; bottom: 2px;

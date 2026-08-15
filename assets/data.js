@@ -32,12 +32,6 @@ const LEAD = {
     cta: "Email me the cheat-sheet",
     subject: "Please send me the 2026 Provider Credential Cheat-Sheet",
   },
-  notes: {
-    title: "Sync Notes",
-    desc: "A short monthly email: NDIS compliance dates, pricing-arrangement changes and practical tech tips for providers. No spam, unsubscribe anytime.",
-    cta: "Subscribe",
-    subject: "Subscribe me to Sync Notes",
-  },
 };
 
 /* ---------- Sectors ---------- */
@@ -236,13 +230,6 @@ const FAQS = [
   { q: "Do we need to sign a long contract?", a: "No lock-in contracts. Packages run month-to-month after an initial 3-month establishment period, and you can scale up, down or pause with 30 days' notice." },
   { q: "Can you work with our existing software?", a: "Yes. We work inside your current rostering, payroll and CRM platforms — and if you don't have systems yet, we'll recommend, set up and migrate you to affordable tools that fit your size." },
   { q: "What if we only need IT, or only admin?", a: "That's fine. Packages can be weighted toward either side. Many clients start with one function and add more as trust builds — the scoping conversation will show what makes sense first." },
-];
-
-/* ---------- Testimonials (illustrative placeholders — replace with real client quotes) ---------- */
-const TESTIMONIALS = [
-  { quote: "Our claims went from constantly bounced to clean every cycle. Their first review showed us where 12 hours a week were going.", name: "SIL Provider", role: "Director · Western Sydney", icon: "fa-universal-access" },
-  { quote: "Rosters, timesheets and payroll just happen now. Our coordinators finally spend their day with clients instead of spreadsheets.", name: "Home Care Provider", role: "Operations Manager · Brisbane", icon: "fa-hand-holding-heart" },
-  { quote: "They built our website, locked down our data and took over therapist scheduling — one team, one invoice, zero chasing.", name: "Early Intervention Service", role: "Centre Director · Melbourne", icon: "fa-child-reaching" },
 ];
 
 /* ---------- Sync Score quiz ---------- */
