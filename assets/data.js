@@ -2,7 +2,7 @@
    ProviderSync — Site Data
    All editable content lives here. Update text, prices and
    contact details without touching the HTML pages.
-   NOTE: Contact is EMAIL ONLY. No free-audit offers anywhere.
+   NOTE: Contact is EMAIL ONLY. No complimentary audit offers anywhere.
    ============================================================ */
 
 const SITE = {
@@ -24,7 +24,7 @@ const NAV = [
   { label: "Contact", href: "contact.html", page: "contact" },
 ];
 
-/* ---------- Lead capture (email-first, no free-audit language) ---------- */
+/* ---------- Lead capture (email-first) ---------- */
 const LEAD = {
   checklist: {
     title: "The 2026 Provider Credential Cheat-Sheet",
@@ -54,7 +54,7 @@ const SECTORS = [
       "Participant onboarding & service agreements",
       "NDIS plan management administration",
       "SDA / SIL backend coordination",
-      "Compliance reporting & audit-ready evidence",
+      "Compliance reporting and evidence organisation",
       "Rostering & support worker scheduling",
       "Claims, invoicing & payment reconciliation",
     ],
@@ -70,12 +70,12 @@ const SECTORS = [
     icon: "fa-hand-holding-heart",
     img: "assets/img/aged-care.jpg",
     title: "Aged Care",
-    short: "Residential, home care & community services",
+    short: "Residential, Support at Home & community services",
     intro:
       "Rosters, timesheets, payroll and compliance never stop in aged care. We keep the workforce engine running quietly in the background — every shift covered, every hour verified, every record current.",
     serve: [
       "Residential aged care facilities",
-      "Home care package providers",
+      "Support at Home providers — including former Home Care Package providers",
       "Community aged care services",
       "Support worker agencies",
     ],
@@ -92,7 +92,7 @@ const SECTORS = [
       { p: "Payroll errors eroding staff trust", s: "Verified timesheets and clean payroll runs" },
       { p: "Credential expiries slipping through", s: "Tracked registers with renewal alerts" },
     ],
-    compliance: "Aged Care Quality Standards · Aged Care Act requirements · home care package rules",
+    compliance: "Strengthened Aged Care Quality Standards · Aged Care Act 2024 requirements · Support at Home program rules",
   },
   {
     id: "ece",
@@ -121,7 +121,7 @@ const SECTORS = [
       { p: "Slow recruitment leaving children waitlisted", s: "Active sourcing and fast, compliant onboarding" },
       { p: "Families left chasing updates", s: "Structured, warm centre–family communication" },
     ],
-    compliance: "Child Safe Standards · WWCC requirements · NDIS early intervention rules",
+    compliance: "National Quality Framework · state and territory WWCC schemes · ACECQA-approved qualifications · National Principles for Child Safe Organisations",
   },
 ];
 
@@ -136,12 +136,16 @@ const SERVICES = [
     blurb:
       "Specialist admin built for the Australian healthcare compliance environment — not generic virtual assistance.",
     items: [
-      { icon: "fa-user-plus", title: "Client Onboarding & Intake", desc: "NDIS onboarding, service agreements and participant records — done right the first time, every time.", points: ["Service agreement preparation", "Participant & client record setup", "Intake coordination with families & coordinators"] },
-      { icon: "fa-calendar-days", title: "Rostering & Scheduling", desc: "Workforce scheduling across aged care, NDIS and ECE with coverage monitored proactively.", points: ["Shift planning & roster management", "Coverage gap monitoring", "Support worker allocation"] },
-      { icon: "fa-money-check-dollar", title: "Payroll & Invoicing", desc: "Timesheets verified, payroll coordinated, claims and billing reconciled to the dollar.", points: ["Timesheet verification", "Payroll coordination", "Claims, invoicing & reconciliation"] },
-      { icon: "fa-shield-halved", title: "Compliance & Reporting", desc: "Documentation maintained continuously against the NDIS Practice Standards and aged care requirements — so certification reviews hold no surprises.", points: ["Incident report management", "Credential & worker screening registers", "Operational & compliance reporting"] },
-      { icon: "fa-user-doctor", title: "Recruitment & Workforce", desc: "Sourcing, onboarding and credentialing support workers, therapists and ECE staff — with every clearance verified before day one.", points: ["Interview & induction coordination", "WWCC, police check & screening verification", "Staff records & credential tracking"] },
-      { icon: "fa-people-arrows", title: "Stakeholder Communication", desc: "Professional, person-first liaison with families, support coordinators and allied health teams on your behalf.", points: ["Family & participant correspondence", "Coordinator & therapist liaison", "Centre–family communications"] },
+      { icon: "fa-user-plus", title: "Client Onboarding & Intake", desc: "Client onboarding, service agreement preparation and record management across NDIS, Aged Care and Early Childhood Education.", points: ["Service agreement preparation", "Participant and client record management", "Intake coordination with families and coordinators"] },
+      { icon: "fa-calendar-days", title: "Rostering & Scheduling", desc: "Workforce rostering and scheduling across NDIS, Aged Care and Early Childhood Education, with proactive coverage monitoring.", points: ["Shift planning and roster management", "Coverage gap monitoring", "Support worker allocation"] },
+      { icon: "fa-money-check-dollar", title: "Payroll & Invoicing", desc: "Timesheets verified, payroll coordinated, and claims and invoices processed accurately.", points: ["Timesheet verification", "Payroll coordination", "Claims processing, invoicing and reconciliation"] },
+      { icon: "fa-shield-halved", title: "Compliance & Reporting", desc: "Maintaining organised documentation in line with NDIS Practice Standards and Aged Care requirements, ready for review.", points: ["Incident report management", "Credential and worker screening registers", "Operational and compliance reporting"] },
+      { icon: "fa-user-doctor", title: "Recruitment & Workforce", desc: "Recruiting, onboarding and managing compliance for support workers, allied health professionals and Early Childhood Education staff.", points: ["Interview and induction coordination", "WWCC, police check and screening verification", "Staff records and credential tracking"] },
+      { icon: "fa-people-arrows", title: "Stakeholder Communication", desc: "Professional communication and coordination with participants, families, support coordinators and allied health professionals.", points: ["Family and participant correspondence", "Coordinator and therapist liaison", "Centre and family communication"] },
+      { icon: "fa-address-book", title: "CRM & Client Database Management", desc: "Maintain accurate participant and client records, update service information, manage referrals, and keep databases organised, secure and current.", points: ["Participant and client record maintenance", "Referral and service-information updates", "Secure, organised database management"] },
+      { icon: "fa-envelope-open-text", title: "Email & Document Administration", desc: "Manage shared inboxes, respond to administrative enquiries, prepare service agreements and correspondence, organise documents, and maintain digital records.", points: ["Shared inbox administration", "Service agreements and correspondence", "Digital document organisation"] },
+      { icon: "fa-arrows-rotate", title: "Workflow Automation", desc: "Streamline repetitive administrative tasks through templates, digital workflows, automated reminders and system integrations to improve efficiency and reduce manual work.", points: ["Templates and repeatable workflows", "Automated reminders", "Practical system integrations"] },
+      { icon: "fa-folder-tree", title: "Digital Filing & Record Management", desc: "Organise and maintain secure electronic filing systems for participant, employee and business records, keeping documentation accessible and ready for review.", points: ["Secure electronic filing structures", "Participant, employee and business records", "Accessible documentation for review"] },
     ],
   },
   {
@@ -151,26 +155,26 @@ const SERVICES = [
     icon: "fa-laptop-code",
     img: "assets/img/it-code.jpg",
     blurb:
-      "Technology for organisations that handle sensitive participant data — built secure by default, run so you never think about it.",
+      "Technology for organisations that handle sensitive participant data, with practical security safeguards and support for your operational needs.",
     items: [
       { icon: "fa-globe", title: "Website Development", desc: "Custom, healthcare-focused WordPress websites with accessible design and secure enquiry forms.", points: ["Custom WordPress builds", "WCAG-conscious, mobile-first design", "Secure client enquiry & referral forms"] },
-      { icon: "fa-user-shield", title: "Cybersecurity & Data Protection", desc: "Privacy Act 1988 and APP-aligned data handling: encryption, access control and staff security habits that protect participant information.", points: ["MFA & role-based access setup", "Encrypted storage & secure file sharing", "Staff cyber-awareness training"] },
+      { icon: "fa-user-shield", title: "Cybersecurity & Data Protection", desc: "Practical privacy and security safeguards, including encryption, access controls and staff security habits that support responsible participant-information handling.", points: ["MFA and role-based access setup", "Secure storage and file sharing", "Staff cyber-awareness training"] },
       { icon: "fa-gears", title: "Care Software Setup & Migration", desc: "Rostering, CRM and care-management platforms selected for your size, set up properly, and migrated without losing a record.", points: ["Platform selection & configuration", "Data migration & clean-up", "Workflow automation between tools"] },
       { icon: "fa-server", title: "IT Infrastructure", desc: "Business email, domains, DNS, hosting and managed VPS — professionally set up and maintained on Australian-friendly terms.", points: ["Business email setup (Google Workspace / M365)", "Domain, DNS & hosting management", "Managed VPS hosting & backups"] },
       { icon: "fa-magnifying-glass-chart", title: "SEO & Online Presence", desc: "Be found by the families and coordinators searching for providers in your area.", points: ["Local SEO optimisation", "Google Business Profile setup", "Analytics & directory listings"] },
       { icon: "fa-share-nodes", title: "Social Media & Branding", desc: "Brand identity, logo design and consistent presence across Facebook, Instagram and LinkedIn — with imagery and language that respects the people you support.", points: ["Brand identity & logo design", "Content strategy & posting", "Review management strategy"] },
       { icon: "fa-headset", title: "Remote IT Support", desc: "Staff IT onboarding, troubleshooting and software setup — on demand, without an in-house IT hire.", points: ["Staff IT onboarding & offboarding", "Remote troubleshooting", "Software setup & configuration"] },
-      { icon: "fa-rotate", title: "Backup & Continuity", desc: "If a laptop dies or an account is compromised, your service delivery doesn't stop — and your records don't vanish.", points: ["Automated backup schedules", "Account recovery planning", "Notifiable Data Breach-ready incident response"] },
+      { icon: "fa-rotate", title: "Backup & Continuity", desc: "Backup and recovery planning designed to help your team restore access and records after a device or account incident.", points: ["Automated backup schedules", "Account recovery planning", "Incident-response support planning"] },
     ],
   },
 ];
 
 /* ---------- Compliance & sensitivity (the rulebook section) ---------- */
 const COMPLIANCE = [
-  { icon: "fa-scale-balanced", title: "Privacy Act 1988 & the APPs", desc: "Participant information handled on a need-to-know basis — consent-led collection, data minimisation, encrypted storage and clean destruction." },
-  { icon: "fa-file-shield", title: "NDIS Practice Standards", desc: "Evidence built into everyday workflow, not assembled in a panic — so certification and verification reviews hold no surprises." },
-  { icon: "fa-id-card-clip", title: "Worker screening & credentials", desc: "NDIS Worker Screening, WWCC, police checks, First Aid (HLTAID011) and CPR tracked in live registers with renewal alerts before expiry." },
-  { icon: "fa-bell", title: "Notifiable Data Breaches scheme", desc: "Incident-ready processes: we know what counts as an eligible breach, who must be told, and how fast." },
+  { icon: "fa-scale-balanced", title: "Privacy Act 1988 & the APPs", desc: "Sensitive information handled with consent where required, data minimisation, access controls, secure storage practices and appropriate retention processes." },
+  { icon: "fa-file-shield", title: "NDIS Practice Standards", desc: "Evidence built into everyday workflow to help keep it organised and ready when certification or verification reviews occur." },
+  { icon: "fa-id-card-clip", title: "Worker screening & credentials", desc: "NDIS Worker Screening for relevant roles, state and territory WWCC schemes, police checks, first aid — HLTAID011 (general) or HLTAID012 (education and care setting) — and CPR tracked with renewal alerts." },
+  { icon: "fa-bell", title: "Notifiable Data Breaches scheme", desc: "Incident-response processes designed to support your organisation's assessment, escalation and notification obligations where they apply." },
   { icon: "fa-hand-holding-heart", title: "Aged Care Quality Standards", desc: "Documentation and reporting mapped to the Standards your assessors actually check." },
   { icon: "fa-heart", title: "Dignity in every word", desc: "Person-first language in every letter, post and web page. The people your clients support are people — our communications never forget it." },
 ];
@@ -196,38 +200,41 @@ const ADVANTAGES = [
 /* ---------- Packages ---------- */
 const PACKAGES = [
   {
-    name: "Starter", price: "$900–$1,500", per: "/month",
+    name: "Starter", price: "from A$1,500", per: "/month + GST",
     best: "New & micro providers finding their feet",
     features: ["Core admin: intake, records & invoicing", "Basic IT & email support", "Compliance document maintenance", "Monthly reporting", "Email support (next business day)"],
     featured: false,
   },
   {
-    name: "Growth", price: "$2,000–$3,500", per: "/month",
+    name: "Growth", price: "from A$3,000", per: "/month + GST",
     best: "Established providers ready to scale",
     features: ["Everything in Starter", "Rostering, payroll & timesheets", "Website maintenance + local SEO", "Recruitment & onboarding support", "Weekly reporting", "Priority support (same day)"],
     featured: true,
   },
   {
-    name: "Complete", price: "$4,000+", per: "/month",
+    name: "Complete", price: "from A$6,000", per: "/month + GST",
     best: "Mid-size providers wanting a full backend",
-    features: ["Everything in Growth", "End-to-end compliance management", "Full IT, digital & social media", "Cybersecurity & data protection", "Monthly strategy review calls", "Dedicated founder access"],
+    features: ["Everything in Growth", "Compliance administration and evidence support", "Full IT, digital & social media", "Cybersecurity and data protection support", "Monthly strategy review calls", "Dedicated founder access"],
     featured: false,
   },
 ];
 
 const ADDONS = [
-  { icon: "fa-globe", title: "Website Build", price: "from $1,800", desc: "Custom healthcare WordPress site with secure enquiry forms" },
-  { icon: "fa-palette", title: "Brand Identity", price: "from $1,200", desc: "Logo, palette, templates & brand guidelines" },
-  { icon: "fa-user-shield", title: "Security Hardening", price: "from $900", desc: "MFA rollout, access review, backup & breach-response setup" },
+  { icon: "fa-globe", title: "Website Build", price: "from A$1,800 + GST", desc: "Custom healthcare WordPress site with secure enquiry forms" },
+  { icon: "fa-palette", title: "Brand Identity", price: "from A$1,200 + GST", desc: "Logo, palette, templates & brand guidelines" },
+  { icon: "fa-user-shield", title: "Security Hardening", price: "from A$900 + GST", desc: "MFA rollout, access review, backup and incident-response setup" },
   { icon: "fa-file-shield", title: "Compliance Catch-up", price: "quoted", desc: "One-off documentation cleanup before a certification review" },
+  { icon: "fa-clipboard-list", title: "Backend Audit", price: "from A$399 + GST", desc: "Detailed review of processes, documentation, systems and operational risks, with prioritised recommendations. The audit fee can be credited across the first four months of an ongoing package, as agreed in your proposal." },
 ];
 
 /* ---------- FAQs ---------- */
 const FAQS = [
   { q: "Are you a call centre or offshore VA service?", a: "Neither. ProviderSync is founder-led — you work directly with Niluki (admin & operations) and Viraj (IT & digital). We're a specialist team focused only on Australian healthcare providers, not a generic outsourcing pool." },
-  { q: "How do you handle participant and client data?", a: "In line with the Privacy Act 1988 and the Australian Privacy Principles: consent-led collection, need-to-know access, encrypted storage, signed confidentiality agreements, and Notifiable Data Breach-ready incident processes. Data handling terms are documented in every service agreement." },
+  { q: "How do you handle participant and client data?", a: "We support reasonable privacy safeguards under the Privacy Act 1988 and Australian Privacy Principles, including need-to-know access, secure storage practices, signed confidentiality agreements and incident-escalation processes. Data handling responsibilities are documented in every service agreement." },
   { q: "How does an engagement start?", a: "You email us. A founder replies within one business day, we have a short scoping conversation, and you receive a written proposal with a fixed monthly price. If it's not a fit, you'll know within a week — no pressure, no obligation." },
-  { q: "Do we need to sign a long contract?", a: "No lock-in contracts. Packages run month-to-month after an initial 3-month establishment period, and you can scale up, down or pause with 30 days' notice." },
+  { q: "Do we need to sign a long contract?", a: "Service terms, notice periods and any renewal arrangements are set out clearly in your proposal and service agreement. We keep arrangements practical for growing providers and explain all commercial terms before commencement." },
+  { q: "Is a refundable security retainer required?", a: "To commence service, ProviderSync may require a refundable security retainer equal to three months of your selected monthly fee. After 12 months, it is returned following account reconciliation or, with your written approval, carried forward for a renewed annual term. It may only be applied to unpaid invoices or documented wind-down costs agreed in the service agreement. It is not payment for future services or a guarantee of business, compliance, audit or other outcomes. Full terms are confirmed before commencement." },
+  { q: "How is my package scope set?", a: "Your written proposal documents the agreed systems, active client and staff volumes, payroll frequency, response targets, reporting cadence, included functions and any out-of-scope work. This keeps pricing clear as your organisation changes." },
   { q: "Can you work with our existing software?", a: "Yes. We work inside your current rostering, payroll and CRM platforms — and if you don't have systems yet, we'll recommend, set up and migrate you to affordable tools that fit your size." },
   { q: "What if we only need IT, or only admin?", a: "That's fine. Packages can be weighted toward either side. Many clients start with one function and add more as trust builds — the scoping conversation will show what makes sense first." },
 ];
@@ -256,7 +263,7 @@ const VALUES = [
   { icon: "fa-file-circle-check", title: "Compliance-first", desc: "Regulatory accuracy is non-negotiable. We build evidence continuously, never retrofit it." },
   { icon: "fa-people-roof", title: "One team, one roof", desc: "Admin and IT working as a single unit — decisions made together, nothing lost between vendors." },
   { icon: "fa-hand-holding-hand", title: "Personalised, not a call centre", desc: "Direct access to the founders. Your account is never a ticket number." },
-  { icon: "fa-scale-balanced", title: "Affordable & honest", desc: "Packages sized for growing providers, priced plainly, with no lock-in surprises." },
+  { icon: "fa-scale-balanced", title: "Affordable & honest", desc: "Packages sized for growing providers, priced plainly, with clear commercial terms." },
 ];
 
 /* ---------- Founders ---------- */
@@ -276,7 +283,7 @@ const FOUNDERS = [
 /* ---------- Stats ---------- */
 const STATS = [
   { num: 3, suffix: "", label: "Healthcare sectors served" },
-  { num: 14, suffix: "+", label: "Backend functions covered" },
+  { num: 18, suffix: "+", label: "Backend functions covered" },
   { num: 10, suffix: "+", label: "Hours saved weekly, typical client" },
   { num: 100, suffix: "%", label: "Remote & Australia-wide" },
 ];

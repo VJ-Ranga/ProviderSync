@@ -4,6 +4,7 @@
 # Local AI session data and implementation notes
 .remember/
 docs/
+logos/
 
 # Internal business reference documents
 *.docx
